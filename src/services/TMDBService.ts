@@ -1,4 +1,5 @@
 import axios from "axios";
+import Movies from "../models/Movies";
 import TMDBResponse from "../models/Movies";
 
 const baseURL: string = "https://api.themoviedb.org/3";
@@ -10,3 +11,7 @@ export const getTrendingMovies = async (): Promise<TMDBResponse> => {
     })
   ).data;
 };
+
+// export const getMoviesBySearch = async (): Promise<Movies> => {
+//   return (await axios.get(baseURL + "/search")).data;
+// };
