@@ -11,13 +11,15 @@ import Header from "./components/Header";
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Home />
-      {/* <Router>
+      <Router>
+        <Header />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/gifs/favorites" element={<Watchlist />} /> */}
+          {/* <Route path="/gifs/:id" element={<Details />} /> */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </Router> */}
+      </Router>
     </div>
   );
 };
