@@ -1,5 +1,5 @@
-import Movies from "./Movies";
+import { Movie } from "./Movie";
 
 export default interface TMDBResponse {
-  results: Movies[];
+  results: Movie[];
 }

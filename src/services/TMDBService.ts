@@ -1,5 +1,6 @@
 import axios from "axios";
-import TMDBResponse from "../models/Movies";
+import { Movie } from "../models/Movie";
+import TMDBResponse from "../models/TMDBResponse";
 
 const baseURL: string = "https://api.themoviedb.org/3";
 const key: string = process.env.REACT_APP_API_KEY || "";
@@ -27,6 +28,25 @@ export const getMovies = async (
     })
   ).data;
 };
+
+export const getMoviesBySearch = async (
+  search: string
+): Promise<TMDBResponse> => {
+  return (
+    await axios.get(`${baseURL}/search/movie`, {
+      params: { api_key: key, query: search },
+    })
+  ).data;
+};
+
+export const getMovieById = async (id: string): Promise<Movie> => {
+  return (
+    await axios.get(`${baseURL}/movie/${encodeURIComponent(id)}`, {
+      params: { api_key: key },
+    })
+  ).data;
+};
+
 // export const getMoviesBySearch = async (): Promise<Movies> => {
 //   return (await axios.get(baseURL + "/search")).data;
 // };
