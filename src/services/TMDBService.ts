@@ -7,7 +7,7 @@ const key: string = process.env.REACT_APP_API_KEY || "";
 export const getTrendingMovies = async (): Promise<TMDBResponse> => {
   return (
     await axios.get(`${baseURL}/trending/movie/day`, {
-      params: { api_key: key },
+      params: { api_key: key, include_adult: false },
     })
   ).data;
 };
@@ -18,9 +18,10 @@ export const getMovies = async (
 ): Promise<TMDBResponse> => {
   const params = {
     api_key: key,
-    ...(genre ? { genre: parseInt(genre) } : {}),
-    ...(rating ? { rating: parseInt(rating) } : {}),
-    ...(length ? { length: parseInt(length) } : {}),
+    include_adult: false,
+    ...(genre ? { with_genres: parseInt(genre) } : {}),
+    ...(rating ? { "vote_average.lte": parseInt(rating) } : {}),
+    ...(length ? { "with_runtime.lte": parseInt(length) } : {}),
   };
   return (
     await axios.get(`${baseURL}/discover/movie`, {
@@ -34,7 +35,7 @@ export const getMoviesBySearch = async (
 ): Promise<TMDBResponse> => {
   return (
     await axios.get(`${baseURL}/search/movie`, {
-      params: { api_key: key, query: search },
+      params: { api_key: key, query: search, include_adult: false },
     })
   ).data;
 };
@@ -42,7 +43,7 @@ export const getMoviesBySearch = async (
 export const getMovieById = async (id: string): Promise<Movie> => {
   return (
     await axios.get(`${baseURL}/movie/${encodeURIComponent(id)}`, {
-      params: { api_key: key },
+      params: { api_key: key, include_adult: false },
     })
   ).data;
 };
