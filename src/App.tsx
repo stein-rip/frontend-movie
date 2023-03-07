@@ -7,6 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Header from "./components/Header";
+import Details from "./components/Details";
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route path="/gifs/favorites" element={<Watchlist />} /> */}
-          {/* <Route path="/gifs/:id" element={<Details />} /> */}
+          <Route path="/movies/:id" element={<Details />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
