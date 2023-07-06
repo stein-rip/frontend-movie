@@ -40,6 +40,9 @@ const Home = () => {
 			<Link to="/movies/favorites">
 				<button>Favorites</button>
 			</Link>
+			<Link to="/">
+				<button>Home</button>
+			</Link>
 			<CardList allmovies={movies} />
 		</div>
 	);
