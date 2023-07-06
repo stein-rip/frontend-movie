@@ -9,7 +9,7 @@ import {
 import SearchForm from "./SearchForm";
 
 import "./Home.css";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import CardList from "./Cardlist";
 
 const Home = () => {
@@ -37,6 +37,9 @@ const Home = () => {
 	return (
 		<div className="Home">
 			<SearchForm />
+			<Link to="/movies/favorites">
+				<button>Favorites</button>
+			</Link>
 			<CardList allmovies={movies} />
 		</div>
 	);
