@@ -12,10 +12,9 @@ const Header = () => {
 			<Link to="/">
 				<img className="image" src={logo} alt="" />
 			</Link>
+			<SearchForm />
 			<DiscoverForm />
-			{/* <Link to="/">Movies</Link> */}
-			<div className="Home">
-				<SearchForm />
+			<div className="buttons">
 				<Link to="/movies/favorites">
 					<button>Favorites</button>
 				</Link>

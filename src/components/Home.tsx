@@ -36,13 +36,6 @@ const Home = () => {
 	}, [genre, rating, length, search]);
 	return (
 		<div className="Home">
-			<SearchForm />
-			<Link to="/movies/favorites">
-				<button>Favorites</button>
-			</Link>
-			<Link to="/">
-				<button>Home</button>
-			</Link>
 			<CardList allmovies={movies} />
 		</div>
 	);

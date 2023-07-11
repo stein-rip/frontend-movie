@@ -1,6 +1,7 @@
 body {
-    background-color: black;
-    color: green;
-    font-size: x-large;
-    font-weight: bold;
+	background-color: black;
+	color: rgb(221, 209, 41);
+	font-size: x-large;
+	font-weight: bold;
+	width: 100vw;
 }

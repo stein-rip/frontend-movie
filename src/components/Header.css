@@ -1,14 +1,23 @@
-.Header .image {
-    width: 200px;
-    height: 200px;
-
+.Header {
+	border-bottom: solid 1px black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.Header {
-    border-bottom: solid 1px black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.Header .image {
+	width: 200px;
+	height: 200px;
+	margin-top: 80px;
+}
 
+.Header .search {
+	background-color: orange;
+}
+
+.Header button {
+	background-color: black;
+	color: white;
+	padding: 6px;
+	border-radius: 12px;
 }

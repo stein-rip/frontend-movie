@@ -1,0 +1,7 @@
+.DiscoverForm {
+	display: flex;
+	justify-content: center;
+	color: blue;
+	background-color: orange;
+	width: 50px;
+}
